@@ -1,11 +1,11 @@
-ROM node:8-alpine
+FROM node:8-alpine
 LABEL maintainer "Felipe Zipitria <fzipi@fing.edu.uy>"
 
 ENV HUGO_VERSION 0.27.1-r0
 
 RUN mkdir -p /home/hugo && \
-  addgroup -Sg 1000 hugo && \
-  adduser -SG hugo -u 1000 -h /home/hugo hugo && \
+  addgroup -Sg 1001 hugo && \
+  adduser -SG hugo -u 1001 -h /home/hugo hugo && \
   chown hugo:hugo /home/hugo && \
   apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community/ --allow-untrusted hugo=$HUGO_VERSION && \
   apk add --no-cache bash git libcurl libxml2 libxslt && \
