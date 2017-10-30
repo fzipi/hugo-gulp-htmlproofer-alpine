@@ -10,7 +10,7 @@ RUN mkdir -p /home/hugo && \
   apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community/ --allow-untrusted hugo=$HUGO_VERSION && \
   apk add --no-cache bash git libcurl libxml2 libxslt file imagemagick graphicsmagick && \
   mkdir -p /srv/hugo && \
-  chown hugo:hugo /srv/hugo && \
+  chown -R hugo:hugo /srv/hugo && \
   echo 'hugo ALL=NOPASSWD:ALL' >> /etc/sudoers && \
   rm -rf /var/cache/apk/*
 
