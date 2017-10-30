@@ -8,7 +8,7 @@ RUN mkdir -p /home/hugo && \
   adduser -SG hugo -u 1001 -h /home/hugo hugo && \
   chown hugo:hugo /home/hugo && \
   apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/community/ --allow-untrusted hugo=$HUGO_VERSION && \
-  apk add --no-cache bash git libcurl libxml2 libxslt && \
+  apk add --no-cache bash git libcurl libxml2 libxslt file imagemagick graphicsmagick && \
   mkdir -p /srv/hugo && \
   chown hugo:hugo /srv/hugo && \
   echo 'hugo ALL=NOPASSWD:ALL' >> /etc/sudoers && \
